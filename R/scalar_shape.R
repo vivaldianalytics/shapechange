@@ -114,7 +114,7 @@ scalar_shapechange_Spencer = function(data,time)
   }
   # Creates a 2-column data frame, first column is the time (removing the first time instance)
   frame = cbind(time[2:length(time)],shape)
-  colnames(frame) = c("time","s_r")
+  colnames(frame) = c("time","shape")
   return(frame)
 }
 
@@ -170,7 +170,7 @@ cos_theta = function(data,time)
   
   frame = cbind(time[2:length(time)],theta)
   
-  colnames(frame) = c("time","s_r")
+  colnames(frame) = c("time","shape")
   
   return(frame)
 }
@@ -187,7 +187,7 @@ shape_change_fostertilman = function(data,time)
   }
   
   frame = cbind(time[2:length(time)],sc)
-  colnames(frame) = c("time","sc")
+  colnames(frame) = c("time","shape")
   
   return(frame)
 }
@@ -204,7 +204,7 @@ shape_change_jassbygoldman = function(data,time)
   }
   
   frame = cbind(time[2:length(time)],sc)
-  colnames(frame) = c("time","sc")
+  colnames(frame) = c("time","shape")
   
   return(frame)
 }
@@ -220,7 +220,7 @@ shape_change_lewis = function(data,time)
   }
   
   frame = cbind(time[2:length(time)],sc)
-  colnames(frame) = c("time","sc")
+  colnames(frame) = c("time","shape")
   
   return(frame)
 }
@@ -242,7 +242,7 @@ shape_change_braycurtis_Field = function(data,time)
   }
   
   frame = cbind(time[2:length(time)],sc)
-  colnames(frame) = c("time","sc")
+  colnames(frame) = c("time","shape")
   
   return(frame)
 }
@@ -277,7 +277,7 @@ shape_change_chi = function(data,time)
   
   frame = cbind(time[2:length(time)],sc)
   
-  colnames(frame) = c("time","sc")
+  colnames(frame) = c("time","shape")
   
   return(frame)
   

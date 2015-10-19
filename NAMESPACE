@@ -7,3 +7,7 @@ export(scalar_shapechange_Spencer)
 export(cos_theta)
 export(shape_change_fostertilman)
 export(shape_change_jassbygoldman)
+export(shape_change)
+export(mc_SP)
+
+
