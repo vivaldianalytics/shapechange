@@ -6,7 +6,6 @@ bindit = function(X,Y)
   return(A)
 }
 
-
 prop_growth_rate_INT = function(dataL,dataH,Time)
 {
   # Data passed to this must be separated from the time variable

@@ -56,23 +56,20 @@ Examples
 
 Below are some examples of how to use this function. We'll start be loading some datasets. The package comes with several pre-loaded datasets in scalar, interval, and monte carlo format. The hoverflies dataset (discussed by Spencer in his paper) contains abundance data for 14 species over a 30-year timeframe:
 
-
-```r
+```{r}
 data(hoverflies)
 ```
 
 We can now calculate Spencer's shape change measure for the community using the shape_change function:
 
-
-```r
+```{r}
 library(shapechange)
 SC_spencer = shape_change(data = hoverflies,"year",method = "Spencer")
 ```
 
 On the other hand, let's suppose that we're dealing with interval data. In this case, we load the interval hoverflies dataset:
 
-
-```r
+```{r}
 data(hoverflies_INT)
 
 SC_INT_spencer = shape_change(data = hoverflies_INT,"year",method = "Spencer")
@@ -80,14 +77,9 @@ SC_INT_spencer = shape_change(data = hoverflies_INT,"year",method = "Spencer")
 
 Finally, we implement the function on the Monte Carlo dataset:
 
-
-```r
+```{r}
 data(hoverflies_MCMC)
 SC_MCMC_spencer = shape_change(data = hoverflies_MCMC,"year",method = "Spencer")
-```
-
-```
-##   |                                                                         |                                                                 |   0%
 ```
 
 
