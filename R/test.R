@@ -1,5 +1,5 @@
-data(hoverflies)
-data(hoverflies_INT)
+# data(hoverflies)
+# data(hoverflies_INT)
 
 # SC_spencer = shape_change(hoverflies,"year",method = "Spencer")
 # SC_spencer_surr = shape_change(hoverflies,"year",method = "Spencer",surr = T)
@@ -14,8 +14,14 @@ data(hoverflies_INT)
 # SC_INT_l = shape_change(hoverflies_INT,"year",method = "Lewis")
 # SC_INT_bcf = shape_change(hoverflies_INT,"year",method = "Bray Curtis Field")
 
-SC_MCMC_spencer = shape_change(hoverflies_MCMC,"year",method = "Spencer",log_transform = T,mc_progress = T,iter = 4,mc_int=T)
-SC_MCMC_ft = shape_change(hoverflies_MCMC,"year",method = "Foster and Tilman",log_transform = T,mc_progress = T,iter = 4)
-SC_MCMC_jg = shape_change(hoverflies_MCMC,"year",method = "Jassby and Goldman",log_transform = T,mc_progress = T,iter = 4)
-SC_MCMC_l = shape_change(hoverflies_MCMC,"year",method = "Lewis",log_transform = T,mc_progress = T,iter = 4)
-SC_MCMC_bcf = shape_change(hoverflies_MCMC,"year",method = "Bray Curtis Field",log_transform = T,mc_progress = T,iter = 4)
+# SC_MCMC_spencer = shape_change(hoverflies_MCMC,"year",method = "Spencer",log_transform = T,mc_progress = T,iter = 4,mc_int=T)
+# SC_MCMC_ft = shape_change(hoverflies_MCMC,"year",method = "Foster and Tilman",log_transform = T,mc_progress = T,iter = 4)
+# SC_MCMC_jg = shape_change(hoverflies_MCMC,"year",method = "Jassby and Goldman",log_transform = T,mc_progress = T,iter = 4)
+# SC_MCMC_l = shape_change(hoverflies_MCMC,"year",method = "Lewis",log_transform = T,mc_progress = T,iter = 4)
+# SC_MCMC_bcf = shape_change(hoverflies_MCMC,"year",method = "Bray Curtis Field",log_transform = T,mc_progress = T,iter = 4)
+
+
+
+
+
+

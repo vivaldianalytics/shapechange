@@ -29,9 +29,13 @@ uncertainty_handler_sqrt = function(X,p,addval,addname)
   
   if(!is.null(addval))
   {
-    Y[,,1] = cbind(Y[,,1],addval)
-    Y[,,2] = cbind(Y[,,2],addval)
-    dimnames(Y)[[2]] = c(colnames(X),addname)
+    d = dim(Y)
+    
+    Z = array(0,c(d[1],d[2] + 1,d[3]))
+    Z[,,1] = cbind(Y[,,1],addval)
+    Z[,,2] = cbind(Y[,,2],addval)
+    dimnames(Z)[[2]] = c(colnames(X),addname)
+    Y = Z
   }
   else
   {
@@ -80,7 +84,7 @@ uncertainty_handler_poisson = function(X,p,addval,addvalname)
   
   Y[,,2] = apply(t(as.matrix(X)),1,function(x) Rpoisson_interval(x,conflevel = p.))
   
-  show("calculating poisson")
+
   
   for(j in 1:nc)
   {
@@ -90,9 +94,13 @@ uncertainty_handler_poisson = function(X,p,addval,addvalname)
   
   if(!is.null(addval))
   {
-    Y[,,1] = cbind(Y[,,1],addval)
-    Y[,,2] = cbind(Y[,,2],addval)
-    dimnames(Y)[[2]] = c(colnames(X),addname)
+    d = dim(Y)
+    
+    Z = array(0,c(d[1],d[2] + 1,d[3]))
+    Z[,,1] = cbind(Y[,,1],addval)
+    Z[,,2] = cbind(Y[,,2],addval)
+    dimnames(Z)[[2]] = c(colnames(X),addvalname)
+    Y = Z
   }
   else
   {
@@ -102,7 +110,7 @@ uncertainty_handler_poisson = function(X,p,addval,addvalname)
   return(Y)
 }
 
-as.interval = function(data,exclude = NULL,method,param)
+as.interval.frame = function(data,exclude = NULL,method,param)
 {
   if(is.null(exclude))
   {
@@ -124,6 +132,8 @@ as.interval = function(data,exclude = NULL,method,param)
     M = match(exclude,colnames(data))
     exval= data[,M]
     data = data[,-M]
+    
+
     if(method == "sqrt")
     {
       data = uncertainty_handler_sqrt(data,param,exval,exclude)

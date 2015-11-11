@@ -56,14 +56,13 @@ mc_cent = function(data,time,name)
 cent_to_int = function(C_final,p)
 {
   d2 = dim(C_final)
-  show(d2)
+
   fin = array(0,dim = c(d2[1],2,2))
   
   for(t in 1:d2[1])
   {
     z95 = HPDinterval(as.mcmc(t(C_final[t,,])),prob = p)
-    show(z95[2,])
-    show(fin[t,,])
+
     fin[t,,] = z95
   }
   dimnames(fin) = list(dimnames(C_final)[[1]],dimnames(C_final)[[2]],1:2)
